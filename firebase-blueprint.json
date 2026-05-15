@@ -1,0 +1,108 @@
+{
+  "entities": {
+    "Event": {
+      "title": "College Event",
+      "description": "Details about a college event",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "venue": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "category": { "type": "string", "enum": ["academic", "cultural", "sports", "other"] },
+        "registrationLink": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "date", "venue"]
+    },
+    "Notice": {
+      "title": "College Notice",
+      "description": "Official announcements for students and faculty",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "priority": { "type": "string", "enum": ["low", "normal", "high", "urgent"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "content"]
+    },
+    "Project": {
+      "title": "Student Project",
+      "description": "Innovative projects by students",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "authors": { "type": "string" },
+        "description": { "type": "string" },
+        "department": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "pdfUrl": { "type": "string" },
+        "githubUrl": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "GalleryImage": {
+      "title": "Gallery Image",
+      "description": "Photos from various college events and campus",
+      "type": "object",
+      "properties": {
+        "url": { "type": "string" },
+        "caption": { "type": "string" },
+        "category": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "Achievement": {
+      "title": "Achievement",
+      "description": "Top student or college achievements",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "studentName": { "type": "string" },
+        "description": { "type": "string" },
+        "date": { "type": "string" },
+        "imageUrl": { "type": "string" }
+      }
+    },
+    "Attendance": {
+      "title": "Attendance Record",
+      "description": "Student attendance for an event or session",
+      "type": "object",
+      "properties": {
+        "eventId": { "type": "string" },
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["eventId", "studentId", "timestamp"]
+    }
+  },
+  "firestore": {
+    "events": {
+      "schema": "Event",
+      "description": "Collection of college events"
+    },
+    "notices": {
+      "schema": "Notice",
+      "description": "Collection of official notices"
+    },
+    "projects": {
+      "schema": "Project",
+      "description": "Collection of student innovation projects"
+    },
+    "gallery": {
+      "schema": "GalleryImage",
+      "description": "Photo gallery collection"
+    },
+    "achievements": {
+      "schema": "Achievement",
+      "description": "Collection of achievements"
+    },
+    "attendance": {
+      "schema": "Attendance",
+      "description": "Student attendance records"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Zenith University",
+  "description": "A modern, responsive college website for Zenith University featuring events, photo gallery, student projects, achievements, and an admin dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
